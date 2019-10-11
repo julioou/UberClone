@@ -18,6 +18,7 @@
 		8170E6BC2350A46900FA52F0 /* fundo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8170E6BA2350A46800FA52F0 /* fundo.png */; };
 		8170E6BE2350B33A00FA52F0 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8170E6BD2350B33A00FA52F0 /* CadastroViewController.swift */; };
 		8170E6C02350B34E00FA52F0 /* EntrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8170E6BF2350B34E00FA52F0 /* EntrarViewController.swift */; };
+		8170E6C22351237300FA52F0 /* PassageiroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8170E6C12351237300FA52F0 /* PassageiroViewController.swift */; };
 		9E2BA1BBB92F10EE89474931 /* Pods_UberClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAD6EE16D4DF0084B3FCB22 /* Pods_UberClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		8170E6BA2350A46800FA52F0 /* fundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fundo.png; sourceTree = "<group>"; };
 		8170E6BD2350B33A00FA52F0 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		8170E6BF2350B34E00FA52F0 /* EntrarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrarViewController.swift; sourceTree = "<group>"; };
+		8170E6C12351237300FA52F0 /* PassageiroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageiroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				8170E6A32350A0C200FA52F0 /* PrincipalViewController.swift */,
 				8170E6BD2350B33A00FA52F0 /* CadastroViewController.swift */,
 				8170E6BF2350B34E00FA52F0 /* EntrarViewController.swift */,
+				8170E6C12351237300FA52F0 /* PassageiroViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8170E6C22351237300FA52F0 /* PassageiroViewController.swift in Sources */,
 				8170E6A42350A0C200FA52F0 /* PrincipalViewController.swift in Sources */,
 				8170E6A02350A0C200FA52F0 /* AppDelegate.swift in Sources */,
 				8170E6A22350A0C200FA52F0 /* SceneDelegate.swift in Sources */,

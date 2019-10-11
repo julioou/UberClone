@@ -7,14 +7,27 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class PrincipalViewController: UIViewController {
 
+    let autenticacao = Auth.auth()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        autenticacao.addStateDidChangeListener { (autenticacao, usuario) in
+            if let usuarioLogado = usuario {
+                self.performSegue(withIdentifier: "menuGo", sender: nil)
+            }
+        }
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+    }
 
 }
 

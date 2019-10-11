@@ -69,7 +69,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="pta-iJ-jxD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DzD-3c-EZr"/>
-                            <constraint firstItem="pta-iJ-jxD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Hx9-Wy-DMm"/>
+                            <constraint firstItem="pta-iJ-jxD" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Hx9-Wy-DMm"/>
                             <constraint firstAttribute="trailing" secondItem="zT2-TA-HHN" secondAttribute="trailing" id="R30-ep-s7G"/>
                             <constraint firstAttribute="bottom" secondItem="zT2-TA-HHN" secondAttribute="bottom" id="ZWZ-pr-uBt"/>
                             <constraint firstItem="anQ-q9-kDB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-70" id="bcV-Yr-RuZ"/>
@@ -81,15 +81,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Menu Principal" id="cGq-FS-eWl"/>
+                    <connections>
+                        <segue destination="dGx-AI-cuT" kind="show" identifier="menuGo" id="IHJ-iO-XXO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="138.0809595202399"/>
+            <point key="canvasLocation" x="886" y="143"/>
         </scene>
         <!--Entrar-->
         <scene sceneID="DEt-RR-s1F">
             <objects>
-                <viewController id="TY1-9m-anJ" sceneMemberID="viewController">
+                <viewController id="TY1-9m-anJ" customClass="EntrarViewController" customModule="UberClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J6y-7d-mAX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,7 +111,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5kb-z5-0S3" userLabel="campoSenha">
                                 <rect key="frame" x="20" y="214.5" width="335" height="34"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqz-VI-blv">
                                 <rect key="frame" x="20" y="168.5" width="68.5" height="26"/>
@@ -117,7 +120,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kON-Sm-tsW">
-                                <rect key="frame" x="109" y="319.5" width="157.5" height="40"/>
+                                <rect key="frame" x="109" y="278.5" width="157.5" height="40"/>
                                 <color key="backgroundColor" red="0.01290298739" green="0.45551790390000002" blue="0.49121496079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="157.5" id="dTH-pX-1aJ"/>
@@ -127,18 +130,10 @@
                                 <state key="normal" title="Entrar">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="entrarBotao:" destination="TY1-9m-anJ" eventType="touchUpInside" id="U1V-UP-zki"/>
+                                </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cJN-e2-VE1">
-                                <rect key="frame" x="87" y="268.5" width="201" height="32"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="201" id="0PG-qn-tpd"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Passageiro"/>
-                                    <segment title="Motorista"/>
-                                </segments>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -149,9 +144,7 @@
                             <constraint firstItem="z7C-8P-P3f" firstAttribute="trailing" secondItem="KH0-gE-c0I" secondAttribute="trailing" constant="20" id="Twe-gF-sbO"/>
                             <constraint firstItem="Mqz-VI-blv" firstAttribute="top" secondItem="KH0-gE-c0I" secondAttribute="bottom" constant="20" id="YR6-CD-NOX"/>
                             <constraint firstItem="kON-Sm-tsW" firstAttribute="centerX" secondItem="J6y-7d-mAX" secondAttribute="centerX" id="bOR-mu-kc1"/>
-                            <constraint firstItem="cJN-e2-VE1" firstAttribute="top" secondItem="5kb-z5-0S3" secondAttribute="bottom" constant="20" id="bhe-Rl-EYb"/>
-                            <constraint firstItem="cJN-e2-VE1" firstAttribute="centerX" secondItem="J6y-7d-mAX" secondAttribute="centerX" id="eaa-yw-WOH"/>
-                            <constraint firstItem="kON-Sm-tsW" firstAttribute="top" secondItem="cJN-e2-VE1" secondAttribute="bottom" constant="20" id="gUY-Ab-zxy"/>
+                            <constraint firstItem="kON-Sm-tsW" firstAttribute="top" secondItem="5kb-z5-0S3" secondAttribute="bottom" constant="30" id="mJu-ON-odn"/>
                             <constraint firstItem="z7C-8P-P3f" firstAttribute="trailing" secondItem="5kb-z5-0S3" secondAttribute="trailing" constant="20" id="pFE-y4-8YI"/>
                             <constraint firstItem="Mqz-VI-blv" firstAttribute="leading" secondItem="z7C-8P-P3f" secondAttribute="leading" constant="20" id="q3P-qr-gUl"/>
                             <constraint firstItem="uAS-xA-KnY" firstAttribute="top" secondItem="z7C-8P-P3f" secondAttribute="top" constant="25" id="vfP-f5-QPk"/>
@@ -160,15 +153,74 @@
                         <viewLayoutGuide key="safeArea" id="z7C-8P-P3f"/>
                     </view>
                     <navigationItem key="navigationItem" title="Entrar" id="7RB-md-T8Z"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="KH0-gE-c0I" id="pAl-XB-z24"/>
+                        <outlet property="senhaLabel" destination="5kb-z5-0S3" id="ChB-A5-bVf"/>
+                        <segue destination="eYA-1q-554" kind="show" identifier="entrarGo" id="aci-ib-O3B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftb-jr-l68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860" y="-178"/>
+            <point key="canvasLocation" x="1670" y="-216"/>
+        </scene>
+        <!--UBER-->
+        <scene sceneID="861-tz-NF4">
+            <objects>
+                <viewController id="dGx-AI-cuT" customClass="PassageiroViewController" customModule="UberClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TX0-Ul-nTn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EyU-If-tsd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KB-4S-chM">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <color key="backgroundColor" red="0.01290298739" green="0.45551790390000002" blue="0.49121496079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Z86-Yg-JWv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="21"/>
+                                <state key="normal" title="Chamar Uber">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="chamarUberBotao:" destination="dGx-AI-cuT" eventType="touchUpInside" id="MGH-zf-h7m"/>
+                                    <action selector="entrarBotao:" destination="TY1-9m-anJ" eventType="touchUpInside" id="K4g-JS-Bf8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4KB-4S-chM" firstAttribute="top" secondItem="EyU-If-tsd" secondAttribute="bottom" id="4Kb-nM-BQN"/>
+                            <constraint firstItem="pYP-oc-Z3P" firstAttribute="trailing" secondItem="4KB-4S-chM" secondAttribute="trailing" id="FGI-rU-VuC"/>
+                            <constraint firstItem="EyU-If-tsd" firstAttribute="top" secondItem="TX0-Ul-nTn" secondAttribute="top" id="G6B-gH-qUx"/>
+                            <constraint firstItem="pYP-oc-Z3P" firstAttribute="trailing" secondItem="EyU-If-tsd" secondAttribute="trailing" id="Q9U-oM-bMs"/>
+                            <constraint firstItem="EyU-If-tsd" firstAttribute="leading" secondItem="TX0-Ul-nTn" secondAttribute="leading" id="SKj-Eg-6bx"/>
+                            <constraint firstItem="4KB-4S-chM" firstAttribute="leading" secondItem="pYP-oc-Z3P" secondAttribute="leading" id="oWP-bB-Wf0"/>
+                            <constraint firstAttribute="bottom" secondItem="4KB-4S-chM" secondAttribute="bottom" id="wQE-lz-rkc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pYP-oc-Z3P"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="UBER" id="DFD-nS-ez0">
+                        <barButtonItem key="leftBarButtonItem" title="Sair da Conta" id="BFv-0h-bho">
+                            <connections>
+                                <action selector="sairBotao:" destination="dGx-AI-cuT" id="GKP-LT-H8P"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapa" destination="EyU-If-tsd" id="g7q-9E-N86"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u8X-po-Vv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3256.8000000000002" y="111.99400299850076"/>
         </scene>
         <!--Cadastro-->
         <scene sceneID="DKc-b0-QIN">
             <objects>
-                <viewController id="Hdj-Dh-QXb" sceneMemberID="viewController">
+                <viewController id="Hdj-Dh-QXb" customClass="CadastroViewController" customModule="UberClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BC9-KJ-Ke7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,6 +258,9 @@
                                 <state key="normal" title="Cadastrar-se">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="cadastrarBotao:" destination="Hdj-Dh-QXb" eventType="touchUpInside" id="3a1-W5-6F2"/>
+                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pc9-Vd-qtZ">
                                 <rect key="frame" x="87" y="292.5" width="201" height="32"/>
@@ -230,7 +285,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nLV-yc-QU8">
-                                <rect key="frame" x="164" y="377" width="49" height="31"/>
+                                <rect key="frame" x="156" y="473" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                         </subviews>
@@ -259,17 +314,24 @@
                         <viewLayoutGuide key="safeArea" id="3qE-F7-hQu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Cadastro" id="dPD-hm-WQn"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="o4W-Qa-UBv" id="Uxg-NU-SB5"/>
+                        <outlet property="nomeLabel" destination="EYb-xL-3RX" id="fMc-a6-Nd1"/>
+                        <outlet property="senhaLabel" destination="rGg-n9-VoG" id="DmF-MN-gF3"/>
+                        <outlet property="tipoUsuario" destination="pc9-Vd-qtZ" id="lmN-5v-QVC"/>
+                        <segue destination="eYA-1q-554" kind="show" identifier="cadastroGo" id="UZY-4s-dbS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AEe-Wt-8hX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860" y="548"/>
+            <point key="canvasLocation" x="1670" y="513"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PUQ-Ef-9bl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yUU-b2-Yo4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KAq-xn-erf">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KAq-xn-erf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -282,9 +344,32 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.0809595202399"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PYO-7L-Y7h">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eYA-1q-554" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="M1R-UR-2jn"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TGq-Q9-JaD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dGx-AI-cuT" kind="relationship" relationship="rootViewController" id="ywg-Jt-enW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hec-PN-d3Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2454" y="143"/>
+        </scene>
     </scenes>
     <resources>
         <image name="fundo.png" width="1030" height="1030"/>
         <image name="logo.png" width="157.5" height="158.5"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="aci-ib-O3B"/>
+        <segue reference="IHJ-iO-XXO"/>
+    </inferredMetricsTieBreakers>
 </document>
