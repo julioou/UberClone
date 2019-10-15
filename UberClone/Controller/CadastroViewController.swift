@@ -16,7 +16,6 @@ class CadastroViewController: UIViewController {
     @IBOutlet var senhaLabel: UITextField!
     @IBOutlet var tipoUsuario: UISegmentedControl!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

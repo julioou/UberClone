@@ -82,7 +82,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Menu Principal" id="cGq-FS-eWl"/>
                     <connections>
-                        <segue destination="dGx-AI-cuT" kind="show" identifier="menuGo" id="IHJ-iO-XXO"/>
+                        <segue destination="dGx-AI-cuT" kind="push" identifier="menuGo" id="IHJ-iO-XXO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -156,7 +156,7 @@
                     <connections>
                         <outlet property="emailLabel" destination="KH0-gE-c0I" id="pAl-XB-z24"/>
                         <outlet property="senhaLabel" destination="5kb-z5-0S3" id="ChB-A5-bVf"/>
-                        <segue destination="eYA-1q-554" kind="show" identifier="entrarGo" id="aci-ib-O3B"/>
+                        <segue destination="eYA-1q-554" kind="presentation" identifier="entrarGo" id="aci-ib-O3B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftb-jr-l68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -215,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8X-po-Vv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3256.8000000000002" y="111.99400299850076"/>
+            <point key="canvasLocation" x="3250" y="137"/>
         </scene>
         <!--Cadastro-->
         <scene sceneID="DKc-b0-QIN">
@@ -319,7 +319,7 @@
                         <outlet property="nomeLabel" destination="EYb-xL-3RX" id="fMc-a6-Nd1"/>
                         <outlet property="senhaLabel" destination="rGg-n9-VoG" id="DmF-MN-gF3"/>
                         <outlet property="tipoUsuario" destination="pc9-Vd-qtZ" id="lmN-5v-QVC"/>
-                        <segue destination="eYA-1q-554" kind="show" identifier="cadastroGo" id="UZY-4s-dbS"/>
+                        <segue destination="eYA-1q-554" kind="presentation" identifier="cadastroGo" id="UZY-4s-dbS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AEe-Wt-8hX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -329,7 +329,7 @@
         <!--Navigation Controller-->
         <scene sceneID="PUQ-Ef-9bl">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yUU-b2-Yo4" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="yUU-b2-Yo4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KAq-xn-erf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -347,7 +347,7 @@
         <!--Navigation Controller-->
         <scene sceneID="PYO-7L-Y7h">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eYA-1q-554" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="eYA-1q-554" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="M1R-UR-2jn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TGq-Q9-JaD">
@@ -361,7 +361,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hec-PN-d3Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2454" y="143"/>
+            <point key="canvasLocation" x="2458" y="138"/>
         </scene>
     </scenes>
     <resources>
@@ -369,7 +369,7 @@
         <image name="logo.png" width="157.5" height="158.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aci-ib-O3B"/>
+        <segue reference="UZY-4s-dbS"/>
         <segue reference="IHJ-iO-XXO"/>
     </inferredMetricsTieBreakers>
 </document>
