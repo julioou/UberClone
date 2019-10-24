@@ -10,14 +10,14 @@ import UIKit
 import FirebaseAuth
 
 class EntrarViewController: UIViewController {
-
+    
     @IBOutlet var emailLabel: UITextField!
     @IBOutlet var senhaLabel: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -26,23 +26,29 @@ class EntrarViewController: UIViewController {
         if retorno == "Cadastrado" {
             
             guard let email = emailLabel.text else {fatalError()}
-            guard let senha = emailLabel.text else {fatalError()}
+            guard let senha = senhaLabel.text else {fatalError()}
             let autenticacao = Auth.auth()
             
             autenticacao.signIn(withEmail: email, password: senha) { (usuario, erro) in
                 if erro == nil {
-                    if usuario != nil {
-                        self.performSegue(withIdentifier: "entrarGo", sender: nil)
+                    if usuario == nil {
+                        print("*********************************")
+                        print("Não foi possivel se conectar.")
+                        print("*********************************")
                     }
                     
                 } else {
+                    print("*********************************")
                     print("Falha ao logar conta de usuário.")
+                    print("*********************************")
                 }
                 
             }
             
         } else {
+            print("*****************************************")
             print("O campo \(retorno) não foi preenchido.")
+            print("*****************************************")
         }
     }
     
@@ -63,6 +69,6 @@ class EntrarViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
-
-
+    
+    
 }

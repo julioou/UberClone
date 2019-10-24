@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class CadastroViewController: UIViewController {
 
@@ -19,7 +20,6 @@ class CadastroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     //Validar campos se certificando que o usuario nao deixou nenhum campo em branco.
@@ -41,13 +41,36 @@ class CadastroViewController: UIViewController {
         if retorno == "Cadastrado" {
             
             guard let email = emailLabel.text else {fatalError()}
-            guard let senha = emailLabel.text else {fatalError()}
+            guard let senha = senhaLabel.text else {fatalError()}
+            guard let nome = nomeLabel.text else {fatalError()}
             let autenticacao = Auth.auth()
             
             autenticacao.createUser(withEmail: email, password: senha) { (usuario, erro) in
                 if erro == nil {
-                    if usuario != nil {
-                        self.performSegue(withIdentifier: "cadastroGo", sender: nil)
+                    if usuario?.user != nil {
+                        //Configurando Firebase
+                        let dados = Database.database().reference()
+                        let usuarios = dados.child("Usuarios")
+                        //Definindo o tipo de usuário
+                        var tipo: String!
+                        if self.tipoUsuario.selectedSegmentIndex == 0 {
+                            tipo = "Passageiro"
+                        } else {
+                            tipo = "Motorista"
+                        }
+                        
+                        //Coletando dados do usuário.
+                        if tipo != nil {
+                            let dadosUsuario: [String: Any] = [
+                                "Email": usuario?.user.email!,
+                                "Nome": nome,
+                                "Tipo": tipo!
+                            ]
+                            
+                            //Criando dados do usuário.
+                            usuarios.child((usuario?.user.uid)!).setValue(dadosUsuario)
+                        }
+                        
                     }
                 } else {
                     print("Erro ao criar conta de usuário.")

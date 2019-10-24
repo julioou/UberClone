@@ -82,7 +82,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Menu Principal" id="cGq-FS-eWl"/>
                     <connections>
-                        <segue destination="dGx-AI-cuT" kind="push" identifier="menuGo" id="IHJ-iO-XXO"/>
+                        <segue destination="eYA-1q-554" kind="presentation" identifier="menuGo" id="ePT-6m-7aj"/>
+                        <segue destination="SaL-oi-3ms" kind="presentation" identifier="motoristaGo" modalPresentationStyle="fullScreen" id="MmQ-pA-xij"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -97,7 +98,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KH0-gE-c0I" userLabel="campoEmail">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="m@2.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KH0-gE-c0I" userLabel="campoEmail">
                                 <rect key="frame" x="20" y="114.5" width="335" height="34"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -108,7 +109,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5kb-z5-0S3" userLabel="campoSenha">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5kb-z5-0S3" userLabel="campoSenha">
                                 <rect key="frame" x="20" y="214.5" width="335" height="34"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -156,12 +157,11 @@
                     <connections>
                         <outlet property="emailLabel" destination="KH0-gE-c0I" id="pAl-XB-z24"/>
                         <outlet property="senhaLabel" destination="5kb-z5-0S3" id="ChB-A5-bVf"/>
-                        <segue destination="eYA-1q-554" kind="presentation" identifier="entrarGo" id="aci-ib-O3B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftb-jr-l68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="-216"/>
+            <point key="canvasLocation" x="886" y="-597"/>
         </scene>
         <!--UBER-->
         <scene sceneID="861-tz-NF4">
@@ -174,7 +174,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EyU-If-tsd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KB-4S-chM">
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KB-4S-chM">
                                 <rect key="frame" x="0.0" y="587" width="375" height="80"/>
                                 <color key="backgroundColor" red="0.01290298739" green="0.45551790390000002" blue="0.49121496079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -210,12 +210,121 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="botaoChamar" destination="4KB-4S-chM" id="mWU-8l-gBm"/>
                         <outlet property="mapa" destination="EyU-If-tsd" id="g7q-9E-N86"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8X-po-Vv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3250" y="137"/>
+            <point key="canvasLocation" x="2638" y="-202"/>
+        </scene>
+        <!--Requisições-->
+        <scene sceneID="gnU-ai-BtJ">
+            <objects>
+                <tableViewController id="uJL-dO-DrW" customClass="MotoristaTableViewController" customModule="UberClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0tf-sZ-huH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="minhaCell" textLabel="aAF-p7-ksa" detailTextLabel="ShO-9V-tPp" style="IBUITableViewCellStyleSubtitle" id="P1P-A5-4EB">
+                                <rect key="frame" x="0.0" y="28" width="375" height="55.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P1P-A5-4EB" id="suf-sQ-I55">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aAF-p7-ksa">
+                                            <rect key="frame" x="16" y="10" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ShO-9V-tPp">
+                                            <rect key="frame" x="16" y="31.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uJL-dO-DrW" id="eK5-mF-nPZ"/>
+                            <outlet property="delegate" destination="uJL-dO-DrW" id="y3d-a6-Q9s"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Requisições" id="G3j-L1-4mh">
+                        <barButtonItem key="leftBarButtonItem" title="Sair da Conta" id="qk6-0C-5X7">
+                            <connections>
+                                <action selector="botaoSair:" destination="uJL-dO-DrW" id="TtK-Cb-6d7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="Tkr-qa-U7o" kind="show" identifier="VaiAceitarCorrida" id="x8g-0D-S5a"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rkR-1A-nE5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2638" y="526"/>
+        </scene>
+        <!--Aceitar Corrida View Controller-->
+        <scene sceneID="oDa-qf-nT5">
+            <objects>
+                <viewController id="Tkr-qa-U7o" customClass="AceitarCorridaViewController" customModule="UberClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wnD-HD-DgR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nRR-tc-Thc">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpX-5J-KkG">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Kbw-gd-ba2"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="Lcx-hL-sJD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="21"/>
+                                <state key="normal" title="Aceitar Corrida">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="botaoAceitar:" destination="Tkr-qa-U7o" eventType="touchUpInside" id="jFW-Sf-x9l"/>
+                                    <action selector="chamarUberBotao:" destination="dGx-AI-cuT" eventType="touchUpInside" id="n9j-wt-Flz"/>
+                                    <action selector="entrarBotao:" destination="TY1-9m-anJ" eventType="touchUpInside" id="ky4-tV-h8C"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="kpX-5J-KkG" secondAttribute="bottom" id="7zi-ca-tpC"/>
+                            <constraint firstItem="nRR-tc-Thc" firstAttribute="top" secondItem="Gjs-ha-cm0" secondAttribute="top" id="C0n-p5-v9p"/>
+                            <constraint firstItem="Gjs-ha-cm0" firstAttribute="bottom" secondItem="nRR-tc-Thc" secondAttribute="bottom" id="XtJ-eV-sKk"/>
+                            <constraint firstItem="kpX-5J-KkG" firstAttribute="leading" secondItem="Gjs-ha-cm0" secondAttribute="leading" id="aEt-5h-qUI"/>
+                            <constraint firstItem="nRR-tc-Thc" firstAttribute="leading" secondItem="Gjs-ha-cm0" secondAttribute="leading" id="awe-Wf-BTT"/>
+                            <constraint firstItem="Gjs-ha-cm0" firstAttribute="trailing" secondItem="kpX-5J-KkG" secondAttribute="trailing" id="ba0-eY-76X"/>
+                            <constraint firstItem="Gjs-ha-cm0" firstAttribute="trailing" secondItem="nRR-tc-Thc" secondAttribute="trailing" id="ghs-mu-KsM"/>
+                            <constraint firstItem="kpX-5J-KkG" firstAttribute="centerX" secondItem="wnD-HD-DgR" secondAttribute="centerX" id="zXy-Cf-TIF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gjs-ha-cm0"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kav-rA-00r"/>
+                    <connections>
+                        <outlet property="botaoAceitarCorrida" destination="kpX-5J-KkG" id="DAk-va-H2B"/>
+                        <outlet property="mapa" destination="nRR-tc-Thc" id="0eK-Yt-N6y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UcJ-3X-MDM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3436" y="525"/>
         </scene>
         <!--Cadastro-->
         <scene sceneID="DKc-b0-QIN">
@@ -225,10 +334,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rGg-n9-VoG" userLabel="campoSenha">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rGg-n9-VoG" userLabel="campoSenha">
                                 <rect key="frame" x="20" y="241" width="335" height="34"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyx-3l-ToT">
                                 <rect key="frame" x="20" y="208" width="62" height="23"/>
@@ -236,7 +345,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EYb-xL-3RX" userLabel="compoNome">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="James M" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EYb-xL-3RX" userLabel="compoNome">
                                 <rect key="frame" x="20" y="164" width="335" height="34"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -273,7 +382,7 @@
                                     <segment title="Motorista"/>
                                 </segments>
                             </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o4W-Qa-UBv" userLabel="campoEmail">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="m@2.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o4W-Qa-UBv" userLabel="campoEmail">
                                 <rect key="frame" x="20" y="87" width="335" height="34"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -284,10 +393,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nLV-yc-QU8">
-                                <rect key="frame" x="156" y="473" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -319,12 +424,11 @@
                         <outlet property="nomeLabel" destination="EYb-xL-3RX" id="fMc-a6-Nd1"/>
                         <outlet property="senhaLabel" destination="rGg-n9-VoG" id="DmF-MN-gF3"/>
                         <outlet property="tipoUsuario" destination="pc9-Vd-qtZ" id="lmN-5v-QVC"/>
-                        <segue destination="eYA-1q-554" kind="presentation" identifier="cadastroGo" id="UZY-4s-dbS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AEe-Wt-8hX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="513"/>
+            <point key="canvasLocation" x="886" y="908"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PUQ-Ef-9bl">
@@ -342,7 +446,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cN3-Rg-wQd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.0809595202399"/>
+            <point key="canvasLocation" x="-142" y="143"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PYO-7L-Y7h">
@@ -361,15 +465,29 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hec-PN-d3Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2458" y="138"/>
+            <point key="canvasLocation" x="1846" y="-201"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZLy-bc-vec">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SaL-oi-3ms" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tB8-jN-xy0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uJL-dO-DrW" kind="relationship" relationship="rootViewController" id="uyW-Sg-CYL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fSr-Bs-VBK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1846" y="525"/>
         </scene>
     </scenes>
     <resources>
         <image name="fundo.png" width="1030" height="1030"/>
         <image name="logo.png" width="157.5" height="158.5"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="UZY-4s-dbS"/>
-        <segue reference="IHJ-iO-XXO"/>
-    </inferredMetricsTieBreakers>
 </document>

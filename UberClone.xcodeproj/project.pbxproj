@@ -18,8 +18,9 @@
 		8170E6BE2350B33A00FA52F0 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8170E6BD2350B33A00FA52F0 /* CadastroViewController.swift */; };
 		8170E6C02350B34E00FA52F0 /* EntrarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8170E6BF2350B34E00FA52F0 /* EntrarViewController.swift */; };
 		8170E6C22351237300FA52F0 /* PassageiroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8170E6C12351237300FA52F0 /* PassageiroViewController.swift */; };
+		817226C1235F36A100ED1FF6 /* MotoristaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817226C0235F36A100ED1FF6 /* MotoristaTableViewController.swift */; };
+		81B142A72361D65900470025 /* AceitarCorridaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B142A62361D65900470025 /* AceitarCorridaViewController.swift */; };
 		81C07F8423563A6E00A7ABB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81C07F8323563A6D00A7ABB9 /* GoogleService-Info.plist */; };
-		81CE06882354A63C00A22D21 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CE06872354A63C00A22D21 /* File.swift */; };
 		9E2BA1BBB92F10EE89474931 /* Pods_UberClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAD6EE16D4DF0084B3FCB22 /* Pods_UberClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,8 +41,9 @@
 		8170E6BD2350B33A00FA52F0 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		8170E6BF2350B34E00FA52F0 /* EntrarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrarViewController.swift; sourceTree = "<group>"; };
 		8170E6C12351237300FA52F0 /* PassageiroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageiroViewController.swift; sourceTree = "<group>"; };
+		817226C0235F36A100ED1FF6 /* MotoristaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotoristaTableViewController.swift; sourceTree = "<group>"; };
+		81B142A62361D65900470025 /* AceitarCorridaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AceitarCorridaViewController.swift; sourceTree = "<group>"; };
 		81C07F8323563A6D00A7ABB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		81CE06872354A63C00A22D21 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +116,8 @@
 				8170E6BD2350B33A00FA52F0 /* CadastroViewController.swift */,
 				8170E6BF2350B34E00FA52F0 /* EntrarViewController.swift */,
 				8170E6C12351237300FA52F0 /* PassageiroViewController.swift */,
-				81CE06872354A63C00A22D21 /* File.swift */,
+				817226C0235F36A100ED1FF6 /* MotoristaTableViewController.swift */,
+				81B142A62361D65900470025 /* AceitarCorridaViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -264,10 +267,11 @@
 			files = (
 				8170E6C22351237300FA52F0 /* PassageiroViewController.swift in Sources */,
 				8170E6A42350A0C200FA52F0 /* PrincipalViewController.swift in Sources */,
-				81CE06882354A63C00A22D21 /* File.swift in Sources */,
 				8170E6A02350A0C200FA52F0 /* AppDelegate.swift in Sources */,
 				8170E6A22350A0C200FA52F0 /* SceneDelegate.swift in Sources */,
 				8170E6BE2350B33A00FA52F0 /* CadastroViewController.swift in Sources */,
+				81B142A72361D65900470025 /* AceitarCorridaViewController.swift in Sources */,
+				817226C1235F36A100ED1FF6 /* MotoristaTableViewController.swift in Sources */,
 				8170E6C02350B34E00FA52F0 /* EntrarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,7 +418,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3H2H296D96;
 				INFOPLIST_FILE = UberClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,7 +438,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3H2H296D96;
 				INFOPLIST_FILE = UberClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

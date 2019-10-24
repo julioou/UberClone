@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class PrincipalViewController: UIViewController {
 
@@ -18,15 +19,26 @@ class PrincipalViewController: UIViewController {
         
         autenticacao.addStateDidChangeListener { (autenticacao, usuario) in
             if let usuarioLogado = usuario {
-                self.performSegue(withIdentifier: "menuGo", sender: nil)
+                let bancoDados = Database.database().reference()
+                let usuarioRef = bancoDados.child("Usuarios").child(usuarioLogado.uid)
+                
+                usuarioRef.observeSingleEvent(of: .value) { (snapshot) in
+                    let dados = snapshot.value as? NSDictionary
+                    let tipoUsuario = dados!["Tipo"] as! String
+
+                    if tipoUsuario == "Passageiro" {
+                        self.performSegue(withIdentifier: "menuGo", sender: nil)
+                    } else {
+                        self.performSegue(withIdentifier: "motoristaGo", sender: nil)
+                    }
+                }
+                
             }
         }
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        
     }
 
 }
