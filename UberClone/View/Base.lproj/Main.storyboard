@@ -171,9 +171,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EyU-If-tsd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KB-4S-chM">
                                 <rect key="frame" x="0.0" y="587" width="375" height="80"/>
                                 <color key="backgroundColor" red="0.01290298739" green="0.45551790390000002" blue="0.49121496079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -189,15 +186,68 @@
                                     <action selector="entrarBotao:" destination="TY1-9m-anJ" eventType="touchUpInside" id="K4g-JS-Bf8"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EyU-If-tsd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n92-f5-T5I">
+                                <rect key="frame" x="20" y="74" width="335" height="130"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ehs-yF-0Qd">
+                                        <rect key="frame" x="20" y="30" width="15" height="15"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="LIa-6g-ZXV"/>
+                                            <constraint firstAttribute="width" constant="15" id="eS6-VU-gZP"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ib-oa-tzF">
+                                        <rect key="frame" x="20" y="80" width="15" height="15"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="CnF-pU-DfI"/>
+                                            <constraint firstAttribute="width" constant="15" id="Hko-qA-2XP"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Meu Local" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a9f-M9-j0o">
+                                        <rect key="frame" x="45" y="20" width="270" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu destino" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BNY-SL-P37">
+                                        <rect key="frame" x="45" y="70" width="270" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="BNY-SL-P37" firstAttribute="top" secondItem="a9f-M9-j0o" secondAttribute="bottom" constant="16" id="0sH-rX-Zom"/>
+                                    <constraint firstItem="a9f-M9-j0o" firstAttribute="leading" secondItem="Ehs-yF-0Qd" secondAttribute="trailing" constant="10" id="3l8-Yu-3gE"/>
+                                    <constraint firstItem="a9f-M9-j0o" firstAttribute="top" secondItem="n92-f5-T5I" secondAttribute="top" constant="20" id="Adt-If-UQY"/>
+                                    <constraint firstItem="Ehs-yF-0Qd" firstAttribute="top" secondItem="n92-f5-T5I" secondAttribute="top" constant="30" id="Ajo-7n-Upb"/>
+                                    <constraint firstAttribute="height" constant="130" id="Apr-38-qyC"/>
+                                    <constraint firstItem="BNY-SL-P37" firstAttribute="leading" secondItem="2Ib-oa-tzF" secondAttribute="trailing" constant="10" id="GrK-B3-4MP"/>
+                                    <constraint firstItem="Ehs-yF-0Qd" firstAttribute="leading" secondItem="n92-f5-T5I" secondAttribute="leading" constant="20" id="W3Y-4q-7EV"/>
+                                    <constraint firstItem="2Ib-oa-tzF" firstAttribute="leading" secondItem="n92-f5-T5I" secondAttribute="leading" constant="20" id="YlE-SA-Aep"/>
+                                    <constraint firstItem="2Ib-oa-tzF" firstAttribute="top" secondItem="Ehs-yF-0Qd" secondAttribute="bottom" constant="35" id="cae-HY-bjV"/>
+                                    <constraint firstAttribute="trailing" secondItem="a9f-M9-j0o" secondAttribute="trailing" constant="20" id="qZG-dA-Iil"/>
+                                    <constraint firstAttribute="trailing" secondItem="BNY-SL-P37" secondAttribute="trailing" constant="20" id="wER-RZ-Mgm"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="4KB-4S-chM" firstAttribute="top" secondItem="EyU-If-tsd" secondAttribute="bottom" id="4Kb-nM-BQN"/>
+                            <constraint firstItem="n92-f5-T5I" firstAttribute="top" secondItem="pYP-oc-Z3P" secondAttribute="top" constant="30" id="C3r-Be-Wcn"/>
                             <constraint firstItem="pYP-oc-Z3P" firstAttribute="trailing" secondItem="4KB-4S-chM" secondAttribute="trailing" id="FGI-rU-VuC"/>
                             <constraint firstItem="EyU-If-tsd" firstAttribute="top" secondItem="TX0-Ul-nTn" secondAttribute="top" id="G6B-gH-qUx"/>
+                            <constraint firstItem="pYP-oc-Z3P" firstAttribute="trailing" secondItem="n92-f5-T5I" secondAttribute="trailing" constant="20" id="OVW-6u-bho"/>
                             <constraint firstItem="pYP-oc-Z3P" firstAttribute="trailing" secondItem="EyU-If-tsd" secondAttribute="trailing" id="Q9U-oM-bMs"/>
                             <constraint firstItem="EyU-If-tsd" firstAttribute="leading" secondItem="TX0-Ul-nTn" secondAttribute="leading" id="SKj-Eg-6bx"/>
                             <constraint firstItem="4KB-4S-chM" firstAttribute="leading" secondItem="pYP-oc-Z3P" secondAttribute="leading" id="oWP-bB-Wf0"/>
+                            <constraint firstItem="n92-f5-T5I" firstAttribute="leading" secondItem="pYP-oc-Z3P" secondAttribute="leading" constant="20" id="w0W-UL-emz"/>
                             <constraint firstAttribute="bottom" secondItem="4KB-4S-chM" secondAttribute="bottom" id="wQE-lz-rkc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pYP-oc-Z3P"/>
@@ -210,13 +260,18 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="areaEndereco" destination="n92-f5-T5I" id="Lgi-hn-8xs"/>
                         <outlet property="botaoChamar" destination="4KB-4S-chM" id="mWU-8l-gBm"/>
+                        <outlet property="campoDestino" destination="BNY-SL-P37" id="dKX-kc-Efb"/>
+                        <outlet property="campoMeuLocal" destination="a9f-M9-j0o" id="oiv-yp-Hn8"/>
                         <outlet property="mapa" destination="EyU-If-tsd" id="g7q-9E-N86"/>
+                        <outlet property="marcadorDestino" destination="2Ib-oa-tzF" id="MAY-zh-8jU"/>
+                        <outlet property="marcadorMeuLocal" destination="Ehs-yF-0Qd" id="Xfq-6N-ai2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8X-po-Vv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2638" y="-202"/>
+            <point key="canvasLocation" x="2637.5999999999999" y="-202.84857571214394"/>
         </scene>
         <!--Requisições-->
         <scene sceneID="gnU-ai-BtJ">

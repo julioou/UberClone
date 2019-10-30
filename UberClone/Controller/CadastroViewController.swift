@@ -93,5 +93,4 @@ class CadastroViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
-
 }

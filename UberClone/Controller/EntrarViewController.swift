@@ -14,7 +14,6 @@ class EntrarViewController: UIViewController {
     @IBOutlet var emailLabel: UITextField!
     @IBOutlet var senhaLabel: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,6 +68,5 @@ class EntrarViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
-    
     
 }

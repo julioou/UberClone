@@ -181,6 +181,7 @@
 				TargetAttributes = {
 					8170E69B2350A0C200FA52F0 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -417,6 +418,7 @@
 			baseConfigurationReference = 155E55A044BAE4CA53320EE2 /* Pods-UberClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3H2H296D96;
 				INFOPLIST_FILE = UberClone/Info.plist;
@@ -427,6 +429,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jcas.UberClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -437,6 +440,7 @@
 			baseConfigurationReference = 1F862EC919871EADEE4CEFB1 /* Pods-UberClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3H2H296D96;
 				INFOPLIST_FILE = UberClone/Info.plist;

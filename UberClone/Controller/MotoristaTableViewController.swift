@@ -38,6 +38,20 @@ class MotoristaTableViewController: UITableViewController, CLLocationManagerDele
             self.listaRequisicoes.append(snapshot)
             self.tableView.reloadData()
         }
+        
+        //Remover requisicao
+        requisicoes.observe(.childRemoved) { (snapshot) in
+            var indice = 0
+            for requisicao in self.listaRequisicoes {
+                if requisicao.key == snapshot.key {
+                    self.listaRequisicoes.remove(at: indice)
+                }
+                indice += 1
+            }
+            
+            self.tableView.reloadData()
+        }
+
     }
     
     //Obtendo a localizacao do GPS
@@ -55,24 +69,26 @@ class MotoristaTableViewController: UITableViewController, CLLocationManagerDele
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == segueVaiParaAceitarCorrida {
-            if let confirmarDestino = segue.destination as? AceitarCorridaViewController {
-                // Recupera os dados do Passageiro e do motorista.
-                // Enviar os dados recuperados para a tela de aceitar a corrida.
-                if let snapshot = sender as? DataSnapshot  {
-                    if let dados = snapshot.value as? [String:Any] {
-                        if let latPassageiro = dados["Latitude"] as? Double {
-                            if let lonPassageiro = dados["Longitude"] as? Double {
-                                if let nomePassageiro = dados["Nome"] as? String {
-                                    if let emailPassageiro = dados["Email"] as? String {
-                                        let localPassageiro = CLLocationCoordinate2D(latitude: latPassageiro, longitude: lonPassageiro)
-                                        // Envia os dados para a próxima ViewController
-                                        confirmarDestino.nomePassageiro = nomePassageiro
-                                        confirmarDestino.emailPassageiro = emailPassageiro
-                                        confirmarDestino.localizacaoPassageiro = localPassageiro
-                                        // Envia os dados do motorista
-                                        confirmarDestino.localizacaoMotorista = localizacaodoMotorista!
-                                        print(confirmarDestino)
+        if let motoristaLocalizacao = localizacaodoMotorista {
+            if segue.identifier == segueVaiParaAceitarCorrida {
+                if let confirmarDestino = segue.destination as? AceitarCorridaViewController {
+                    // Recupera os dados do Passageiro e do motorista.
+                    // Enviar os dados recuperados para a tela de aceitar a corrida.
+                    if let snapshot = sender as? DataSnapshot  {
+                        if let dados = snapshot.value as? [String:Any] {
+                            if let latPassageiro = dados["Latitude"] as? Double {
+                                if let lonPassageiro = dados["Longitude"] as? Double {
+                                    if let nomePassageiro = dados["Nome"] as? String {
+                                        if let emailPassageiro = dados["Email"] as? String {
+                                            let localPassageiro = CLLocationCoordinate2D(latitude: latPassageiro, longitude: lonPassageiro)
+                                            // Envia os dados para a próxima ViewController
+                                            confirmarDestino.nomePassageiro = nomePassageiro
+                                            confirmarDestino.emailPassageiro = emailPassageiro
+                                            confirmarDestino.localizacaoPassageiro = localPassageiro
+                                            // Envia os dados do motorista
+                                            confirmarDestino.localizacaoMotorista = motoristaLocalizacao
+                                            print(confirmarDestino)
+                                        }
                                     }
                                 }
                             }
@@ -110,9 +126,14 @@ class MotoristaTableViewController: UITableViewController, CLLocationManagerDele
                         formatter.maximumFractionDigits = 3
                         let roundedValue = formatter.string(from: distanciaFinal)
                         
+                        //Preenchendo celulas com localizacao e NOME
                         print(String(describing: roundedValue))
+                        let andamento = atualizandoRequisicao(index: indexPath.row)
                         cell.detailTextLabel?.text = "\(roundedValue!) KM de distância."
-                        cell.textLabel?.text = dados["Nome"] as? String
+                        if let nomeRequisitante = dados["Nome"] as? String {
+                            cell.textLabel?.text = "\(nomeRequisitante) \(andamento)"
+                        }
+                        
                         
                         //Caso nao seja possivel recuperar os dados solicitados, retornar o valor abaixo.
                     } else {
@@ -123,6 +144,18 @@ class MotoristaTableViewController: UITableViewController, CLLocationManagerDele
             }
         }
         return cell
+    }
+    
+    func atualizandoRequisicao(index: Int) -> String{
+        let snapshot = listaRequisicoes[index]
+        var requisicaoMotorista = ""
+        if let dados = snapshot.value as? [String: Any] {
+            if let emailMotorista = dados["MotoristaEmail"] {
+                requisicaoMotorista = "Em Andamento"
+                return requisicaoMotorista
+            }
+        }
+        return requisicaoMotorista
     }
     
     //Ao pressionar deslogar o usuário da conta.
